@@ -1,3 +1,3 @@
-module github.com/ayushkr12/xurl
+module github.com/ayuxsec/xurl
 
 go 1.24.1

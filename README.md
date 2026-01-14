@@ -15,7 +15,7 @@ import (
 	"fmt"
 	"log"
 
-	xurl "github.com/ayushkr12/xurl/pkg"
+	"github.com/ayuxsec/xurl" // go get "github.com/ayuxsec/xurl"
 )
 
 func main() {
