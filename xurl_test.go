@@ -2,6 +2,8 @@ package xurl
 
 import (
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func TestExtractWords(t *testing.T) {
@@ -13,15 +15,11 @@ func TestExtractWords(t *testing.T) {
 
 	words, errs := ExtractWords(rawURLs)
 
-	if len(errs) > 0 {
-		for _, err := range errs {
-			t.Errorf("error extracting words: %v", err)
-		}
+	for _, e := range errs {
+		require.NoError(t, e)
 	}
 
-	if len(words) == 0 {
-		t.Errorf("expected some words, got none")
-	}
+	require.NotEmpty(t, words, "expected some words got none")
 
 	for _, word := range words {
 		t.Log(word)
